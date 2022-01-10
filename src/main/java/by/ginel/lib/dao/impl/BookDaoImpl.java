@@ -16,6 +16,10 @@ import java.util.List;
 @Repository
 public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
 
+    private String getCriteriaLikeValue(String value) {
+        return "%" + value.toLowerCase() + "%";
+    }
+
     @Override
     protected Class<Book> getEntityClass() { return Book.class; }
 
@@ -25,7 +29,12 @@ public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Book> cq = cb.createQuery(Book.class);
         Root<Book> root = cq.from(Book.class);
-        cq.select(root).where(cb.equal(root.get(Book_.NAME), name));
+        cq.select(root).where(
+                cb.or(
+                    cb.like(root.get(Book_.NAME),getCriteriaLikeValue(name)),
+                    cb.like(root.get(Book_.AUTHOR), getCriteriaLikeValue(name))
+                )
+        );
         return entityManager.createQuery(cq).getResultList();
     }
 
