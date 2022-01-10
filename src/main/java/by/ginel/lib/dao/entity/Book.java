@@ -27,7 +27,7 @@ public class Book extends AbstractEntity {
     private List<OrderBook> books;
 
     @OneToOne(mappedBy = "book")
-    private BookCover covers;
+    private BookCover cover;
 
     @OneToOne(mappedBy = "book")
     private BookQuantity quantity;
