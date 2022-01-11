@@ -10,7 +10,6 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
 @Builder
 public class BookGetDto extends AbstractGetDto{
 

@@ -26,8 +26,8 @@ public class PersonDaoImpl extends AbstractDao<Person> implements PersonDao {
         Root<Person> root = cq.from(Person.class);
         cq.select(root).where(
                 cb.or(
-                        cb.equal(root.get(Person_.FNAME), name),
-                        cb.equal(root.get(Person_.LNAME), name)
+                        cb.equal(root.get(Person_.FIRST_NAME), name),
+                        cb.equal(root.get(Person_.LAST_NAME), name)
                 )
         );
         return entityManager.createQuery(cq).getResultList();

@@ -16,6 +16,7 @@ import java.util.List;
 public class Order extends AbstractEntity{
 
     private Date date;
+    @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
     @ManyToOne

@@ -2,10 +2,7 @@ package by.ginel.lib.dao.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -21,6 +18,7 @@ public class Book extends AbstractEntity {
     private String author;
     private String description;
     private Double price;
+    @Enumerated(EnumType.STRING)
     private Genre genre;
 
     @OneToMany(mappedBy = "book")

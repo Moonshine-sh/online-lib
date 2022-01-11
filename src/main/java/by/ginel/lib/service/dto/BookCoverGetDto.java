@@ -8,12 +8,11 @@ import lombok.NoArgsConstructor;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
 @Builder
 public class BookCoverGetDto extends AbstractGetDto{
 
     private Long id;
     private String name;
     private String picPath;
-    private Book bookId;
+    private Book book;
 }

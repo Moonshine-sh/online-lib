@@ -2,9 +2,7 @@ package by.ginel.lib.dao.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -22,6 +20,7 @@ public class Person extends AbstractEntity{
     private String login;
     private String password;
     private String email;
+    @Enumerated(EnumType.STRING)
     private PersonRole role;
 
     @OneToMany(mappedBy = "person")

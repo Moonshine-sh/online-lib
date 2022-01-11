@@ -11,4 +11,5 @@ public class BookCoverCreateDto extends AbstractCreateDto{
 
     private String name;
     private String picPath;
+    private Long bookId;
 }

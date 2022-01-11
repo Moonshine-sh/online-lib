@@ -12,7 +12,6 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
 @Builder
 public class OrderGetDto extends AbstractGetDto{
 

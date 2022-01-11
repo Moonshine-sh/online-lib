@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
 @Builder
 public class PersonUpdateDto extends AbstractUpdateDto{
 

@@ -4,12 +4,9 @@ package by.ginel.lib.starter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-@SpringBootApplication
-@EntityScan(basePackages = "by.ginel.lib.dao.entity")
+@SpringBootApplication()
 class Application {
-
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+    public static void main(String[] args) { SpringApplication.run(Application.class, args); }
 }

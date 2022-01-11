@@ -10,7 +10,6 @@ import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
 @Builder
 public class OrderUpdateDto extends AbstractUpdateDto{
 

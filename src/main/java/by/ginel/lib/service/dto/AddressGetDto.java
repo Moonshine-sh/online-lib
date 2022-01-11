@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
 @Builder
 public class AddressGetDto extends AbstractGetDto{
 
@@ -17,5 +16,5 @@ public class AddressGetDto extends AbstractGetDto{
     private String street;
     private String house;
     private String flat;
-    private Long personId;
+    private Person person;
 }
